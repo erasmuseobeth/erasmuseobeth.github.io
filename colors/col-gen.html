@@ -1,0 +1,544 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Box Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #color-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .color-box {
+            width: 100%;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            position: relative;
+            display: flex;
+            border-radius: 1rem;
+        }
+        .text-sample {
+            /* font-size: 3.5rem; */
+            /* margin: 5px 0; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .copy-icon {
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #555;
+        }
+        .copy-icon:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Color Box Generator</h1>
+<input type="file" id="file-input" accept=".txt">
+<div id="color-container"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Try to load default colors.txt on page load
+        fetch('colors.txt')
+            .then(response => response.text())
+            .then(data => {
+                const colorArray = extractHexColors(data);
+                generateColorDivs(colorArray);
+            })
+            .catch(error => console.error('Error loading colors.txt:', error));
+    });
+
+    document.getElementById('file-input').addEventListener('change', handleFileSelect);
+
+    function handleFileSelect(event) {
+        const file = event.target.files[0];
+        if (!file) {
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const contents = e.target.result;
+            const colorArray = extractHexColors(contents);
+            generateColorDivs(colorArray);
+        };
+
+        reader.readAsText(file);
+    }
+
+    function extractHexColors(text) {
+        const hexColorRegex = /#([0-9A-Fa-f]{3,6})/g;
+        const colors = [];
+        let match;
+        while ((match = hexColorRegex.exec(text)) !== null) {
+            colors.push(match[0]);
+        }
+        return colors;
+    }
+
+    function generateColorDivs(colors) {
+        const container = document.getElementById('color-container');
+        container.innerHTML = ''; // Clear previous results
+
+        const textColors = [
+            "#FFFFFF", "#000000", "#FFD700", "#FFDF00", "#00FFFF", 
+            "#000080", "#4169E1", "#0047AB", "#00008B", "#0000FF"
+        ];
+
+        colors.forEach(color => {
+            const div = document.createElement('div');
+            div.classList.add('color-box');
+            div.style.backgroundColor = color;
+
+            textColors.forEach(textColor => {
+                const p = document.createElement('p');
+                p.classList.add('text-sample');
+                p.style.color = textColor;
+                p.textContent = "This is how I look";
+
+                // Add the copy icon
+                const icon = document.createElement('span');
+                icon.classList.add('copy-icon');
+                icon.innerHTML = '&#xF759;';
+                icon.title = "Copy colors";
+                icon.addEventListener('click', () => copyColors(color, textColor));
+                
+                // Append the icon to the text sample
+                p.appendChild(icon);
+                div.appendChild(p);
+            });
+
+            container.appendChild(div);
+        });
+    }
+
+    function copyColors(backgroundColor, textColor) {
+        const colorInfo = `background-color:${backgroundColor};\ntext-color:${textColor};`;
+        navigator.clipboard.writeText(colorInfo)
+            .then(() => alert('Copied to clipboard!'))
+            .catch(err => console.error('Failed to copy text: ', err));
+    }
+</script>
+
+</body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Box Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #color-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .color-box {
+            width: 48%;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        .color-display {
+            height: 50px; /* Fixed height for the color display */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .text-sample {
+            font-size: 3.5rem;
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .copy-icon, .add-icon {
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #555;
+        }
+        .copy-icon:hover, .add-icon:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Color Box Generator</h1>
+<input type="file" id="file-input" accept=".txt">
+<div id="color-container"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Try to load default colors.txt on page load
+        fetch('colors.txt')
+            .then(response => response.text())
+            .then(data => {
+                const colorArray = extractHexColors(data);
+                generateColorDivs(colorArray);
+            })
+            .catch(error => console.error('Error loading colors.txt:', error));
+    });
+
+    document.getElementById('file-input').addEventListener('change', handleFileSelect);
+
+    function handleFileSelect(event) {
+        const file = event.target.files[0];
+        if (!file) {
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const contents = e.target.result;
+            const colorArray = extractHexColors(contents);
+            generateColorDivs(colorArray);
+        };
+
+        reader.readAsText(file);
+    }
+
+    function extractHexColors(text) {
+        const hexColorRegex = /#([0-9A-Fa-f]{3,6})/g;
+        const colors = [];
+        let match;
+        while ((match = hexColorRegex.exec(text)) !== null) {
+            colors.push(match[0]);
+        }
+        return colors;
+    }
+
+    function generateColorDivs(colors) {
+        const container = document.getElementById('color-container');
+        container.innerHTML = ''; // Clear previous results
+
+        const textColors = [
+            "#FFFFFF", "#000000", "#FFD700", "#FFDF00", "#00FFFF", 
+            "#000080", "#4169E1", "#0047AB", "#00008B", "#0000FF"
+        ];
+
+        colors.forEach(color => {
+            const div = document.createElement('div');
+            div.classList.add('color-box');
+            div.style.backgroundColor = color;
+
+            // Create div for background color display
+            const colorDisplay = document.createElement('div');
+            colorDisplay.classList.add('color-display');
+            colorDisplay.style.backgroundColor = color;
+
+            // Add copy icon
+            const copyIcon = document.createElement('span');
+            copyIcon.classList.add('copy-icon');
+            copyIcon.innerHTML = '📋';
+            copyIcon.title = "Copy background color";
+            copyIcon.addEventListener('click', () => copyColor(color));
+
+            // Add plus icon to save to favorites
+            const addIcon = document.createElement('span');
+            addIcon.classList.add('add-icon');
+            addIcon.innerHTML = '➕';
+            addIcon.title = "Add to favorites";
+            addIcon.addEventListener('click', () => addToFavorites(color));
+
+            // Append icons to color display
+            colorDisplay.appendChild(copyIcon);
+            colorDisplay.appendChild(addIcon);
+            div.appendChild(colorDisplay);
+
+            // Add text for each color in textColors
+            textColors.forEach(textColor => {
+                const p = document.createElement('p');
+                p.classList.add('text-sample');
+                p.style.color = textColor;
+                p.textContent = "This is how I look";
+
+                // Add copy icon for text sample
+                const icon = document.createElement('span');
+                icon.classList.add('copy-icon');
+                icon.innerHTML = '📋';
+                icon.title = "Copy colors";
+                icon.addEventListener('click', () => copyColors(color, textColor));
+                
+                // Append the icon to the text sample
+                p.appendChild(icon);
+                div.appendChild(p);
+            });
+
+            container.appendChild(div);
+        });
+    }
+
+    function copyColor(color) {
+        navigator.clipboard.writeText(color)
+            .then(() => alert(`Copied background color: ${color}`))
+            .catch(err => console.error('Failed to copy text: ', err));
+    }
+
+    function copyColors(backgroundColor, textColor) {
+        const colorInfo = `background-color:${backgroundColor};\ntext-color:${textColor};`;
+        navigator.clipboard.writeText(colorInfo)
+            .then(() => alert('Copied color info to clipboard!'))
+            .catch(err => console.error('Failed to copy text: ', err));
+    }
+
+    function addToFavorites(color) {
+        // Get the current favorite colors from local storage or initialize
+        let favorites = JSON.parse(localStorage.getItem('favouriteColors')) || [];
+
+        // Add the new color
+        favorites.push(color);
+
+        // Save back to local storage
+        localStorage.setItem('favouriteColors', JSON.stringify(favorites));
+        alert(`Added ${color} to favorites!`);
+    }
+</script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Box Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #color-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .color-box {
+            width: 48%;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        .color-display {
+            height: 50px; /* Fixed height for the color display */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .text-sample {
+            font-size: 3.5rem;
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .copy-icon, .add-icon {
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #555;
+        }
+        .copy-icon:hover, .add-icon:hover {
+            color: #000;
+        }
+        .feedback {
+            font-size: 0.8rem;
+            color: green;
+            margin-top: 5px;
+            display: none; /* Hidden by default */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Color Box Generator</h1>
+<input type="file" id="file-input" accept=".txt">
+<div id="color-container"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Try to load default colors.txt on page load
+        fetch('colors.txt')
+            .then(response => response.text())
+            .then(data => {
+                const colorArray = extractHexColors(data);
+                generateColorDivs(colorArray);
+            })
+            .catch(error => console.error('Error loading colors.txt:', error));
+    });
+
+    document.getElementById('file-input').addEventListener('change', handleFileSelect);
+
+    function handleFileSelect(event) {
+        const file = event.target.files[0];
+        if (!file) {
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const contents = e.target.result;
+            const colorArray = extractHexColors(contents);
+            generateColorDivs(colorArray);
+        };
+
+        reader.readAsText(file);
+    }
+
+    function extractHexColors(text) {
+        const hexColorRegex = /#([0-9A-Fa-f]{3,6})/g;
+        const colors = [];
+        let match;
+        while ((match = hexColorRegex.exec(text)) !== null) {
+            colors.push(match[0]);
+        }
+        return colors;
+    }
+
+    function generateColorDivs(colors) {
+        const container = document.getElementById('color-container');
+        container.innerHTML = ''; // Clear previous results
+
+        const textColors = [
+            "#FFFFFF", "#000000", "#FFD700", "#FFDF00", "#00FFFF", 
+            "#000080", "#4169E1", "#0047AB", "#00008B", "#0000FF"
+        ];
+
+        colors.forEach(color => {
+            const div = document.createElement('div');
+            div.classList.add('color-box');
+            div.style.backgroundColor = color;
+
+            // Create div for background color display
+            const colorDisplay = document.createElement('div');
+            colorDisplay.classList.add('color-display');
+            colorDisplay.style.backgroundColor = color;
+
+            // Add copy icon
+            const copyIcon = document.createElement('span');
+            copyIcon.classList.add('copy-icon');
+            copyIcon.innerHTML = '📋';
+            copyIcon.title = "Copy background color";
+            copyIcon.addEventListener('click', () => copyColor(color, copyIcon));
+
+            // Add plus icon to save to favorites
+            const addIcon = document.createElement('span');
+            addIcon.classList.add('add-icon');
+            addIcon.innerHTML = '➕';
+            addIcon.title = "Add to favorites";
+            addIcon.addEventListener('click', () => addToFavorites(color, addIcon));
+
+            // Append icons to color display
+            colorDisplay.appendChild(copyIcon);
+            colorDisplay.appendChild(addIcon);
+            div.appendChild(colorDisplay);
+
+            // Add text for each color in textColors
+            textColors.forEach(textColor => {
+                const p = document.createElement('p');
+                p.classList.add('text-sample');
+                p.style.color = textColor;
+                p.textContent = "This is how I look";
+
+                // Add copy icon for text sample
+                const icon = document.createElement('span');
+                icon.classList.add('copy-icon');
+                icon.innerHTML = '📋';
+                icon.title = "Copy colors";
+                icon.addEventListener('click', () => copyColors(color, textColor, icon));
+                
+                // Append the icon to the text sample
+                p.appendChild(icon);
+                div.appendChild(p);
+            });
+
+            container.appendChild(div);
+        });
+    }
+
+    function copyColor(color, icon) {
+        navigator.clipboard.writeText(color)
+            .then(() => {
+                showFeedback(icon, 'Color copied!');
+            })
+            .catch(err => console.error('Failed to copy text: ', err));
+    }
+
+    function copyColors(backgroundColor, textColor, icon) {
+        const colorInfo = `background-color:${backgroundColor};\ntext-color:${textColor};`;
+        navigator.clipboard.writeText(colorInfo)
+            .then(() => {
+                showFeedback(icon, 'Color info copied!');
+            })
+            .catch(err => console.error('Failed to copy text: ', err));
+    }
+
+    function addToFavorites(color, icon) {
+        // Get the current favorite colors from local storage or initialize
+        let favorites = JSON.parse(localStorage.getItem('favouriteColors')) || [];
+
+        // Add the new color
+        favorites.push(color);
+
+        // Save back to local storage
+        localStorage.setItem('favouriteColors', JSON.stringify(favorites));
+        showFeedback(icon, 'Added to favorites!');
+    }
+
+    function showFeedback(icon, message) {
+        const feedback = document.createElement('span');
+        feedback.classList.add('feedback');
+        feedback.textContent = message;
+        icon.parentElement.appendChild(feedback);
+        
+        // Show feedback for a brief moment
+        feedback.style.display = 'inline';
+        setTimeout(() => {
+            feedback.style.display = 'none';
+            feedback.remove();
+        }, 2000); // Adjust duration as needed
+    }
+</script>
+
+</body>
+</html>

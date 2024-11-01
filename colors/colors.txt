@@ -1,0 +1,413 @@
+good
+#00167A
+Web safe: navy blue night sky ++
+#000080
+
+
+
+deep cosmic midnight royal navy cobalt blue 
+dark blue soft particles grain or sand powder form
+
+
+Royal Blues Color Palette
+Color	Hex	RGB
+#010854	(1,8,84)
+#030972	(3,9,114)
+#050a90	(5,10,144)
+#0a0eae	(10,14,174)
+#080dcc	(8,13,204)
+
+
+#050994
+#05097A
+#141885
+#0B12D5
+#060b91
+rgb(0, 22, 122)
+#002BF5
+#00167A
+#000e3e
+dark navy blue
+02075d
+25% saturated
+#000a46
+Original
+#000e3e
+Web safe: navy blue night sky ++
+#000080
+25% desaturated
+#061138
+midnight indigo blue
+#000066
+
+#002bf5 · Shades
+#002DF5
+#0025CC
+#001EA3
+#00167A
+#000F52
+#002bf5 · Hue Shifts
+#0056F5
+#0041F5
+#002DF5
+#0018F5
+#0004F5
+
+
+#060b91 · Shades
+#060B93
+#05097A
+#040762
+#030549
+#020431
+#060b91 · Hue Shifts
+#062793
+#061993
+#060B93
+#100693
+saturatons
+#060B93
+#050994
+#040995
+
+#001fd5
+#000ED6
+#052BFF
+#0020D6
+#001BB3
+#00158F
+#00106B
+#000B47
+
+#0032D6
+#0020D6
+#000ED6
+#0400D6
+#0524D1
+
+
+0504aa
+031273
+
+#00008e
+#00008F
+#0000CC
+#0A0AFF
+#00007A
+#000061
+#000047
+#000033
+#00188F
+#000C8F
+#00008F
+#0C008F
+#0C008F
+#18008F
+
+combo of navy blue dark navy blue and dark blue
+#000080
+Navy Blue
+#00008B
+Dark Blue
+#00075D
+Dark Navy Blue ++
+#120A8F
+Ultramarine ++
+
+
+
+dark blueShades
+
+#111184
+
+#0F0F75
+
+#0D0D67
+
+#0B0B58
+
+#090949
+
+#08083B
+
+#06062C
+
+#04041D
+
+dark blue Tints
+
+#111184
+
+#1515A5
+
+#1A1AC6
+
+#2222E3
+
+
+
+#1944f1	(25,68,241)
+#002bd8	(0,43,216)
+#0026c0	(0,38,192)
+ 
+
+
+ Colors in Palette
+Color	Hex	RGB
+#010854	(1,8,84) ++
+#030972	(3,9,114) ++
+#050a90	(5,10,144)
+#0a0eae	(10,14,174)
+#080dcc	(8,13,20
+
+
+navy blue Shades
+
+
+#000080
+
+#000072
+
+#000064
+
+#000055
+
+#000047
+
+#000039
+
+#00002B
+
+#00001C
+
+navy blue Tints
+
+
+#000080
+
+#0000A8
+
+#0000CF
+
+#0000F7
+
+#1F1FFF
+
+neon blue Shades
+
+
+#2323FF
+
+#0303FF
+
+#0000E2
+
+#0000C1
+
+#0000A1
+
+#000081
+
+#000061
+
+#000040
+
+electric blue Shades
+
+#00F0FF
+
+#00D5E3
+
+#00BBC6
+
+#00A0AA
+
+electric blue Tints
+
+#00F0FF
+
+#1AF2FF
+
+#33F3FF
+
+#4DF4FF
+
+#66F6FF
+
+#80F8FF
+
+#99F9FF
+
+#B3FBFF
+
+electric blue Tones
+
+#00F0FF
+
+#10E6EF
+
+#20DADF
+
+#30CECF
+
+#40BFBE
+
+#
+
+
+cyan Shades
+
+
+#00FFFF
+
+#00E3E3
+
+#00C6C6
+
+#00AAAA
+
+cyan Tints
+
+#00FFFF
+
+#1AFFFF
+
+#33FFFF
+
+#4DFFFF
+
+#66FFFF
+
+#80FFFF
+
+#99FFFF
+
+#B3FFFF
+
+cyan Tones
+
+#00FFFF
+
+#10EFEB
+
+#20DFD9
+
+#30CFC7
+
+
+blue Shades
+
+
+#0000FF
+
+#0000E3
+
+#0000C6
+
+#0000AA
+
+#00008E
+
+#000071
+
+#000055
+
+#000039
+
+blue Tints
+
+#0000FF
+
+#1A1AFF
+
+#3333F
+blue Hues
+
+
+#007FFF
+
+#0055FF
+
+#002BFF
+
+#0000FF
+
+#2A00FF
+
+
+aqua  Shades
+
+
+#00FFF0
+
+#00E3D5
+
+#00C6BB
+
+#00AAA0
+
+aqua Tints
+
+
+#00FFF0
+
+#1AFFF2
+
+#33FFF3
+
+#4DFFF5
+
+#66FFF6
+
+#80FFF8
+
+#99FFF9
+
+#B3FFFB
+
+aqua Tones
+
+
+#00FFF0
+
+#10EFDE
+
+#20DFCE
+
+#30CFBE
+
+#40BFAF
+
+cobalt Shades
+
+
+#0047AB
+
+#003F98
+
+#003785
+
+#002F72
+
+#00275F
+
+#00204C
+
+#001839
+
+#001026
+cobalt Tints
+
+
+#0047AB
+
+#0055CE
+
+#0064F1
+
+#1576FF
+
+
+royal
+#0C1D4E
+#081334

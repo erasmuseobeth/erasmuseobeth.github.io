@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Black",
+        "category": "Neutral",
+        "hex": "#000000",
+        "rgb": "(0, 0, 0)"
+    },
+    {
+        "name": "White",
+        "category": "Neutral",
+        "hex": "#FFFFFF",
+        "rgb": "(255, 255, 255)"
+    },
+    {
+        "name": "Navy Blue",
+        "category": "Shade",
+        "hex": "#00167A",
+        "rgb": "(0, 22, 122)"
+    },
+    {
+        "name": "Dark Navy Blue",
+        "category": "Original",
+        "hex": "#000080",
+        "rgb": "(0, 0, 128)"
+    },
+    {
+        "name": "Royal Blue",
+        "category": "Shade",
+        "hex": "#060b91",
+        "rgb": "(6, 11, 145)"
+    },
+    {
+        "name": "Electric Blue",
+        "category": "Tint",
+        "hex": "#002bf5",
+        "rgb": "(0, 43, 245)"
+    },
+    {
+        "name": "Cyan",
+        "category": "Tones",
+        "hex": "#00FFFF",
+        "rgb": "(0, 255, 255)"
+    },
+    {
+        "name": "Cobalt",
+        "category": "Tints",
+        "hex": "#0047AB",
+        "rgb": "(0, 71, 171)"
+    },
+    {
+        "name": "Blue",
+        "category": "Shades",
+        "hex": "#0000FF",
+        "rgb": "(0, 0, 255)"
+    }
+]
